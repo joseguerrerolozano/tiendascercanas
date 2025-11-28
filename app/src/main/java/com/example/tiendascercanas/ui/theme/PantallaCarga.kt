@@ -48,7 +48,7 @@ fun PantallaCarga(onFinish: () -> Unit) {
             contentDescription = "Logo",
             modifier = Modifier
                 .size(160.dp)
-                .scale(scale.value)   // 👈 Aquí vuelve la animación
+                .scale(scale.value)
                 .clip(CircleShape)
         )
     }
