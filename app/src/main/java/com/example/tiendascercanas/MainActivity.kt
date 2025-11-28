@@ -28,6 +28,8 @@ import com.example.tiendascercanas.util.getNearbyStores
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
 import java.text.DecimalFormat
+import com.example.tiendascercanas.ui.PantallaCarga
+
 
 class MainActivity : ComponentActivity() {
 
@@ -40,11 +42,18 @@ class MainActivity : ComponentActivity() {
 
         setContent {
             TiendascercanasTheme {
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background
-                ) {
-                    TiendasCercanasScreen(fusedLocationClient)
+
+                var mostrarPantallaCarga by remember { mutableStateOf(true) }
+
+                if (mostrarPantallaCarga) {
+                        PantallaCarga { mostrarPantallaCarga = false }
+                } else {
+                    Surface(
+                        modifier = Modifier.fillMaxSize(),
+                        color = MaterialTheme.colorScheme.background
+                    ) {
+                        TiendasCercanasScreen(fusedLocationClient)
+                    }
                 }
             }
         }
