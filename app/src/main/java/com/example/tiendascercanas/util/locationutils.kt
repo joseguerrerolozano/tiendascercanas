@@ -18,7 +18,7 @@ fun distanceInMeters(
 fun getNearbyStores(
     userLat: Double,
     userLon: Double,
-    radiusMeters: Float = 3000f // 3 km
+    radiusMeters: Float = 9000f // 3 km
 ): List<Pair<Store, Float>> {
     return FakeStores.stores
         .map { store ->
